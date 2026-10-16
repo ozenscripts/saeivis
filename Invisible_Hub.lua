@@ -690,7 +690,7 @@ local function runToEgg(uid, egg)
 		local waypoint = avoid(r.Position, target)
 		local flat = Vector3.new(waypoint.X - r.Position.X, 0, waypoint.Z - r.Position.Z)
 		local unit = flat.Magnitude > 0.01 and flat.Unit or Vector3.zero
-		local speed = math.max(walkSpeed() * CFG.SpeedCap, 8)
+		local speed = 600
 		local v = unit * math.min(speed, flat.Magnitude / 0.05)
 		pcall(function()
 			r.AssemblyLinearVelocity = Vector3.new(v.X, r.AssemblyLinearVelocity.Y, v.Z)
